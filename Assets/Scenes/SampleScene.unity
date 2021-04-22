@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: 383619598}
   - component: {fileID: 383619601}
   - component: {fileID: 383619600}
-  - component: {fileID: 383619599}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -251,19 +250,6 @@ RectTransform:
   m_AnchoredPosition: {x: -185.9, y: -79.9}
   m_SizeDelta: {x: 531.8325, y: 189.7571}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &383619599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383619597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 098b125f2a8e3544398afa7320dd602c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clockLabel: {fileID: 383619600}
 --- !u!114 &383619600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,7 +568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098b125f2a8e3544398afa7320dd602c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clockLabel: {fileID: 0}
+  clockLabel: {fileID: 383619600}
+  clickIntervalInSeconds: 30
 --- !u!4 &1843717480
 Transform:
   m_ObjectHideFlags: 0
