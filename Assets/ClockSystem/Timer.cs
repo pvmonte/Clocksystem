@@ -7,27 +7,28 @@ namespace UgglaGames.DeviceTimerSystem
     {
         DateTime startTime = new DateTime();
         DateTime goalTime = new DateTime();
-        TimerInterval interval = new TimerInterval();
+        int intervalInSeconds;
 
         public Timer() { }
 
-        public Timer(int hours, int minutes, int seconds)
+        public Timer(int seconds)
         {
-            this.interval = new TimerInterval(hours, minutes, seconds);
+            this.intervalInSeconds = seconds;
+            this.goalTime = startTime.AddSeconds(intervalInSeconds);
         }
 
-        public Timer(DateTime startTime, TimerInterval interval)
+        public Timer(DateTime startTime, int interval)
         {
             this.startTime = startTime;
-            this.interval = interval;
-            this.goalTime = startTime.AddTimerInterval(interval);
+            this.intervalInSeconds = interval;
+            this.goalTime = startTime.AddSeconds(interval);
         }
 
-        public Timer(DateTime startTime, DateTime goalTime, TimerInterval interval)
+        public Timer(DateTime startTime, DateTime goalTime, int interval)
         {
             this.startTime = startTime;
             this.goalTime = goalTime;
-            this.interval = interval;
+            this.intervalInSeconds = interval;
         }
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace UgglaGames.DeviceTimerSystem
         public void StartTimer()
         {
             startTime = DateTime.Now;
-            goalTime = startTime.AddTimerInterval(interval);
+            goalTime = startTime.AddSeconds(intervalInSeconds);
         }
     }
 }
